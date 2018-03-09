@@ -1948,3 +1948,33 @@ var data = {};
 
 })();
 
+
+    var mySpreadsheet = "https://docs.google.com/spreadsheets/d/1rdIpJp0t_IUVcT-GwuqFFJ9u3JFpWemgOrqfrjY-vB8/edit#gid=0"
+    {#var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';#}
+
+    $('#table').sheetrock({
+      url: mySpreadsheet,
+      query: "select B,F",
+      fetchSize: 10
+    });
+
+
+  $(window).bind("load", function () {
+    // Code here
+      alert("ok")
+      var table = document.getElementById('table')
+      console.log(table.getElementsByTagName("td"))
+      var tds = table.getElementsByTagName("td")
+      var i = 0
+      var xlist = []
+       while (i <  tds.length) {
+          console.log(tds[i].innerText)
+          console.log(tds[i+1].innerText)
+           xlist.push("tds[i].innerText"+ ": " + tds[i+1].innerText)
+
+           i+=2
+      }
+        window.sessionStorage.setItem("datain", JSON.stringify(xlist)))
+  });
+
+
