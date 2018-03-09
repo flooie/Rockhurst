@@ -191,17 +191,27 @@ Many Republican speakers brought up the still-high unemployment rate and the num
 </div><!--close #shell -->
 
 		<table id="table"  style="display:None"; class="table table-condensed table-striped"></table>
+		<table id="table2"  style="display:None"; class="table table-condensed table-striped"></table>
 
 	</body>
 		
 
 <script type="text/javascript">
     // Define spreadsheet URL.
+	
+    var mySpreadsheet2 = "https://docs.google.com/spreadsheets/d/1aJ0E-qBDO3BABiQlqh4vXSIrqjHKCWEQ2egmsHzOsDM/edit?ts=5aa2d510#gid=1217055117"
+    $('#table2').sheetrock({
+      url: mySpreadsheet2,
+      query: "select B,F",
+      fetchSize: 15
+    });
+	
+	
     var mySpreadsheet = "https://docs.google.com/spreadsheets/d/1rdIpJp0t_IUVcT-GwuqFFJ9u3JFpWemgOrqfrjY-vB8/edit#gid=0"
     $('#table').sheetrock({
       url: mySpreadsheet,
       query: "select B,F",
-      fetchSize: 10
+      fetchSize: 15
     });
 
   $(window).bind("load", function () {
@@ -213,11 +223,26 @@ Many Republican speakers brought up the still-high unemployment rate and the num
       var xlist = []
        while (i <  tds.length) {
 
-	       xlist.push(tds[i].innerText.toUpperCase()  + ": " + tds[i+1].innerText + "help")
+	       xlist.push(tds[i].innerText.toUpperCase()  + ": " + tds[i+1].innerText)
            i+=2
       }
         window.sessionStorage.setItem("datain", JSON.stringify(xlist))
+	  
+	  
+      var table2 = document.getElementById('table2')
+      console.log(table2.getElementsByTagName("td"))
+      var tds2 = table2.getElementsByTagName("td")
+      var i = 0
+      var xlist2 = []
+       while (i <  tds2.length) {
 
+	       xlist.push(tds2[i].innerText.toUpperCase()  + ": " + tds2[i+1].innerText)
+           i+=2
+      }
+        window.sessionStorage.setItem("datain2", JSON.stringify(xlist2))
+
+	  
+	  
 
   });
 
@@ -233,7 +258,8 @@ function getspeechone(){
 
 }
     function getspeechtwo(){
-    return ["WILLIAM PALIN: T iPad scienet teacher", "IHORR SMSD:  This w thing every day got really old. " ]
+	return JSON.parse(window.sessionStorage.getItem('datain2'))
+
 }
 
 
