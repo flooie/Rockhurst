@@ -238,7 +238,7 @@ Many Republican speakers brought up the still-high unemployment rate and the num
       var xlist2 = []
        while (i <  tds2.length) {
 
-	       xlist.push(tds2[i].innerText.toUpperCase()  + ": " + tds2[i+1].innerText)
+	       xlist2.push(tds2[i].innerText.toUpperCase()  + ": " + tds2[i+1].innerText)
            i+=2
       }
         window.sessionStorage.setItem("datain2", JSON.stringify(xlist2))
@@ -260,7 +260,7 @@ function getspeechone(){
 
 }
     function getspeechtwo(){
-	    return ["HELLO PALIN: asdfasdfasdf asdf asdf "]
+// 	    return ["HELLO PALIN: asdfasdfasdf asdf asdf "]
 	return JSON.parse(window.sessionStorage.getItem('datain2'))
 
 }
