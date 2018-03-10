@@ -60,43 +60,13 @@ function getspeechone(){
     var x =  getspeechone()
     var y =  getspeechtwo()
 
-    data.parties = [
-    {
-        name: "democrat",
-        speeches: x
-    },
-    {
-        name: "republican",
-        speeches: y
-    }
-    ].map(party);
+    data.parties = [ {name: "democrat", speeches: x }, {name: "republican", speeches: y } ].map(party);
 
     data.titles = JSON.parse(window.sessionStorage.getItem('titlesobj'))
-    console.log(JSON.parse(window.sessionStorage.getItem('titlesobj')))
 
-    data.speakers = {
-        //"JOSEPH KELLY": {
-        //    name: "Joseph Kelly",
-        //    title: "Student"
-        //},
-        //"BENJAMIN LEGG": {
-        //    name: "Alex Schriver",
-        //    title: "College Republican National Committee chairman"
-        //},
-        //"CADEN GABEL": {
-        //    name: "Allyson Y. Schwartz",
-        //    title: "U.S. representative, Pennsylvania"
-        //},
-        //"GREG OWSLEY": {
-        //    name: "Andy Barr",
-        //    title: "Congressional candidate, Kentucky"
-        //}
-    };
+    data.speakers = {};
 
     data.topics = [
-   
-	    
-
     {
         name: "research",
         re: /\b(research)\b/gi,
@@ -222,8 +192,8 @@ function getspeechone(){
         y: 248
     },
     {
-        name: "mentors",
-        re: /\b(mentors)\b/gi,
+        name: "mentor",
+        re: /\b(mentor)\b/gi,
         x: 214,
         y: 28
     },
