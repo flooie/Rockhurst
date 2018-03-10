@@ -25,19 +25,28 @@
         <style> @import url(https://static01.nyt.com/newsgraphics/2012/09/04/convention-speeches/ac823b240e99920e91945dbec49f35b268c09c38/index.css);
         </style>
 
+        <style>
+            .g-label {
+                margin-left:5%;
+            }
+            body {
+                background: #eefaff;;
+            }
+
+        </style>
     </head>
 
      <div class="navbar-fixed">
         <nav>
-          <div class="nav-wrapper" style="background: #003ca2">
-            <a href="#!" class="brand-logo">ROCKHURST</a>
+          <div class="nav-wrapper" style="background: white">
+            <a href="#!" class="brand-logo" style="color:#003ca2">ROCKHURST</a>
             <ul class="right hide-on-med-and-down">
             </ul>
           </div>
         </nav>
       </div>
 
-     <div class="container" style="border: solid; border-width: 1px;">
+     <div class="container" style="border: solid; border-width: 1px; background:white">
 
             <div class="storyHeader">
                 <div class="storySummary">
@@ -52,18 +61,22 @@
           <form id="g-form">
             <input style="height:20px;" type="text" name="search" placeholder="Add word or phrase" tabindex="1"><button>+</button>
             </form>
-            <div id="g-chart">
-            <div class="g-legend" style="position:absolute;width:970px;">
-            <div class="g-democrat g-arrow">Words favored<br>before coming to Rockhurst</div>
-            <div class="g-republican g-arrow">Words favored<br>after coming to Rockhurst</div>
-            <div class="g-overview">Number of mentions per 25,000 spoken words<br>by <span class="g-swatch g-democrat"></span>PRE and <span class="g-swatch g-republican"></span>POST</div>
-            </div>
-            <div class="g-notes">
-            </div>
+            <div id="g-chart" width="90%" style="margin-left: 0%">
 
-            <div class="g-labels"></div>
+                <div class="g-legend" style="position:absolute;width:90%; margin-left: 5%">
+                    <div class="g-democrat g-arrow">Words favored<br>before coming to Rockhurst</div>
+                    <div class="g-republican g-arrow">Words favored<br>after coming to Rockhurst</div>
 
-                <svg style="background: whitesmoke;" class="g-nodes" width="970" height="540"> </svg>
+                    <div class="g-overview">Number of mentions per 25,000 spoken words<br>by
+                        <span class="g-swatch g-democrat"></span>PRE and <span class="g-swatch g-republican"></span>POST
+                    </div>
+                </div>
+
+
+            <div style="align-content: center" class="g-labels">   </div>
+
+                <svg style="background: whitesmoke; margin-left: 5%;" class="g-nodes" width="90%" height="540"> </svg>
+
 
             </div>
 
