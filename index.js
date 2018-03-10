@@ -211,7 +211,7 @@ function getspeechone(){
     },
     {
         name: "mentors",
-        re: /\b(industry partners)\b/gi,
+        re: /\b(mentors)\b/gi,
         x: 214,
         y: 28
     },
