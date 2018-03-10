@@ -19,11 +19,12 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <style> @import url(https://static01.nyt.com/newsgraphics/2012/09/04/convention-speeches/ac823b240e99920e91945dbec49f35b268c09c38/index.css);
-        </style>
+        <link rel="stylesheet" href="style.css">
+        <style> @import url(https://static01.nyt.com/newsgraphics/2012/09/04/convention-speeches/ac823b240e99920e91945dbec49f35b268c09c38/index.css);</style>
 
         <style>
             .g-label {
@@ -33,15 +34,20 @@
                 background: #eefaff;;
             }
 
+
         </style>
     </head>
 
      <div class="navbar-fixed">
+
         <nav>
           <div class="nav-wrapper" style="background: white">
-            <a href="#!" class="brand-logo" style="color:#003ca2">ROCKHURST</a>
+            <img style="margin-left:10px; margin-top:10px; height:44px;" src="https://www.rockhursths.edu/image/layout/logo_footer.png">R</img>
+              <a href="#!" class="brand-logo" style="color:#003ca2">ROCKHURST</a>
             <ul class="right hide-on-med-and-down">
+              <li><a class="modal-trigger"  href="#modal1" style="color:#003ca2"><i class="material-icons prefix">settings</i></a></li>
             </ul>
+
           </div>
         </nav>
       </div>
@@ -50,10 +56,11 @@
 
             <div class="storyHeader">
                 <div class="storySummary">
-                    <h2 style="align-content: center">The Words We Use</h2>
-                    <span class="summary">A live review of our own education.</span>
+                    <h3 style="align-content: center">The Words We Use</h3>
+                    <span class="summary">A live review of our own education. A live review of our own education.
+                        A live review of our own education. A live review of our own education. </span>
                 </div>
-            </div>
+            </div><br>
 
 
 
@@ -61,24 +68,24 @@
           <form id="g-form">
             <input style="height:20px;" type="text" name="search" placeholder="Add word or phrase" tabindex="1"><button>+</button>
             </form>
+         <hr>
             <div id="g-chart" width="90%" style="margin-left: 0%">
 
                 <div class="g-legend" style="position:absolute;width:90%; margin-left: 5%">
-                    <div class="g-democrat g-arrow">Words favored<br>before coming to Rockhurst</div>
-                    <div class="g-republican g-arrow">Words favored<br>after coming to Rockhurst</div>
+                    <div style="width:150px;" class="g-democrat g-arrow">Words favored<br>before coming to Rockhurst</div>
+                    <div  style="width:150px;" class="g-republican g-arrow">Words favored<br>after coming to Rockhurst</div>
 
                     <div class="g-overview">Number of mentions per 25,000 spoken words<br>by
                         <span class="g-swatch g-democrat"></span>PRE and <span class="g-swatch g-republican"></span>POST
                     </div>
                 </div>
 
-
             <div style="align-content: center" class="g-labels">   </div>
 
-                <svg style="background: whitesmoke; margin-left: 5%;" class="g-nodes" width="90%" height="540"> </svg>
-
+                <svg style=" border:solid; border-top:none; border-bottom:none; border-left:none; border-right:none; border-width:1px; background: white; margin-left: 5%;" class="g-nodes" width="90%" height="540"> </svg>
 
             </div>
+         <hr>
 
 
          <div class="g-body">
@@ -155,6 +162,27 @@
             </div>
           </div>
         </footer>
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Greg, We could store the values you want to default to here</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+
+<script>
+ $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+
+</script>
 
 </html>
 
