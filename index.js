@@ -6,10 +6,14 @@
       var tds = table.getElementsByTagName("td")
       var i = 0
       var xlist = []
+      var cd = {}
        while (i <  tds.length) {
-
+        console.log(tds[i].innerText)
 	       xlist.push(tds[i].innerText.toUpperCase()  + ": " + tds[i+1].innerText)
-           i+=2
+
+           cd[tds[i].innerText.toUpperCase()] = {name:tds[i+2].innerText, title:tds[i+2].innerText}
+
+           i+=3
       }
         window.sessionStorage.setItem("datain", JSON.stringify(xlist))
 	  
@@ -22,9 +26,14 @@
        while (i <  tds2.length) {
 
 	       xlist2.push(tds2[i].innerText.toUpperCase()  + ": " + tds2[i+1].innerText)
-           i+=2
+           cd[tds2[i].innerText.toUpperCase()] = {name:tds2[i+2].innerText, title:tds2[i+2].innerText}
+
+           i+=3
       }
+
+      console.log(cd)
         window.sessionStorage.setItem("datain2", JSON.stringify(xlist2))
+        window.sessionStorage.setItem("titlesobj", JSON.stringify(cd))
 
   });
 
@@ -62,23 +71,26 @@ function getspeechone(){
     }
     ].map(party);
 
+    data.titles = JSON.parse(window.sessionStorage.getItem('titlesobj'))
+    console.log(JSON.parse(window.sessionStorage.getItem('titlesobj')))
+
     data.speakers = {
-        "JOSEPH KELLY": {
-            name: "Joseph Kelly",
-            title: "Student"
-        },
-        "BENJAMIN LEGG": {
-            name: "Alex Schriver",
-            title: "College Republican National Committee chairman"
-        },
-        "CADEN GABEL": {
-            name: "Allyson Y. Schwartz",
-            title: "U.S. representative, Pennsylvania"
-        },
-        "GREG OWSLEY": {
-            name: "Andy Barr",
-            title: "Congressional candidate, Kentucky"
-        }
+        //"JOSEPH KELLY": {
+        //    name: "Joseph Kelly",
+        //    title: "Student"
+        //},
+        //"BENJAMIN LEGG": {
+        //    name: "Alex Schriver",
+        //    title: "College Republican National Committee chairman"
+        //},
+        //"CADEN GABEL": {
+        //    name: "Allyson Y. Schwartz",
+        //    title: "U.S. representative, Pennsylvania"
+        //},
+        //"GREG OWSLEY": {
+        //    name: "Andy Barr",
+        //    title: "Congressional candidate, Kentucky"
+        //}
     };
 
     data.topics = [
@@ -308,7 +320,8 @@ function getspeechone(){
                 }
             });
 
-            topic.count += count = count / party.wordCount * 25e3;
+            //topic.count += count = count / party.wordCount * 25e3;
+            topic.count += count = count
             return {
                 count: count,
                 mentions: mentions
@@ -605,13 +618,19 @@ function getspeechone(){
         .attr("class", "g-speaker")
         .text(function(d) {
             var s = data.speakers[d.key];
-            return s ? s.name : d.key;
+
+                try{return data.titles[d.key].title}
+                catch(e){return s ? s.name : d.key;}
+
+                //return s ? s.title;
+
         });
 
         mentionEnter.append("div")
         .attr("class", "g-speaker-title")
         .text(function(d) {
             var s = data.speakers[d.key];
+                console.log(s)
             return s && s.title;
         });
 

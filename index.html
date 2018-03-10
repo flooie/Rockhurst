@@ -86,16 +86,18 @@
         <div class="g-mentions g-democrat">
             <h3 class="g-head g-hasnt-topic">
             <span class="g-isnt-topic"><br>Language We Brought</span>
-            <span class="g-is-topic"><span style="padding-left: 0.76em;">Survey Before the Conference</span> mentioned <a>&hellip;</a><br><span class="g-count"></span> times per X words</span>
+            <span class="g-is-topic"><span style="padding-left: 0.76em;">Langauge We Brought</span></span>
             </h3>
             <div class="g-divider"></div>
-            <div class="g-truncated">Due to a large number of mentions, only a sampling of excerpts are shown.</div>
+            <!--<div class="g-truncated">Due to a large number of mentions, only a sampling of excerpts are shown.</div>-->
         </div>
 
         <div class="g-mentions g-republican">
             <h3 class="g-head g-hasnt-topic">
             <span class="g-isnt-topic"><br>Langauge We Took</span>
-            <span class="g-is-topic">Survey on how we think and talk stem after <a>&hellip;</a><br><span class="g-count"></span> times per X words</span>
+            <span class="g-is-topic"><span style="padding-left: 0.76em;">Langauge We Took</span></span>
+
+            <!--<span class="g-is-topic">Survey on how we think and talk stem after <a>&hellip;</a><br><span class="g-count"></span> times per X words</span>-->
             </h3>
             <div class="g-divider"></div>
         </div>
@@ -122,16 +124,16 @@
 
         $('#table2').sheetrock({
           url: mySpreadsheet2,
-          query: "select B,F",
-          fetchSize: 10
+          query: "select B, F, D",
+//          fetchSize: 10
         });
 
 
         var mySpreadsheet = "https://docs.google.com/spreadsheets/d/1rdIpJp0t_IUVcT-GwuqFFJ9u3JFpWemgOrqfrjY-vB8/edit#gid=0"
         $('#table').sheetrock({
           url: mySpreadsheet,
-          query: "select B,F",
-          fetchSize: 10
+          query: "select B,F, D",
+//          fetchSize: 10
         });
 
     </script>
