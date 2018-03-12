@@ -57,7 +57,7 @@ function getspeechone(){
 
 (function() {
 
-    var x =  "W PALIN: hello world is this working?"
+    var x =  getspeechone()
     var y =  getspeechtwo()
 
     data.parties = [ {name: "democrat", speeches: x }, {name: "republican", speeches: y } ].map(party);
